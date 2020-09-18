@@ -106,10 +106,10 @@ node{
 		assert (count=="0")
 		sshCommand remote: sourced, command: 'sudo /bin/chmod -R 777 /oravldp/ORACLE/*'
 	}   
-/*	stage('Transfer of Dump to Target'){
+	    stage('Transfer of Dump to Target'){
 		sh 'echo "Transferring dump file to target schema DB server "'	
 		sshCommand remote: sourced, command: "/usr/bin/rsync /oravldp/ORACLE/PLDMEC2_DUMP/expdp_${source_DB_user}_Full*  ${destd.user}@${destd.host}:/oravldp/ORACLE/PLDMEC2_DUMP"
-	}  */
+	}  
 	stage('Backup of Target Environment'){ 
 		sh 'echo "Backup of target DB"'
 		sshCommand remote: destu, command: "/users/gen/${destu.user}/JEE/mecDomain/scripts/forceStopMECServer.sh"
